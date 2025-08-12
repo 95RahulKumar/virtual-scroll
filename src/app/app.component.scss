@@ -1,0 +1,12 @@
+.viewport-wrapper {
+  height: 620px;
+  overflow: hidden;
+}
+.viewport {
+  height: inherit; /* viewport height */
+  width: 100%; /* optional fixed width */
+  border: 1px solid #ccc;
+}
+.item {
+  padding: 4px;
+}
