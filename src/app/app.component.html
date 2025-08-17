@@ -1,19 +1,21 @@
 <h1>Virtual Scroll with Accordion</h1>
 <div class="viewport-wrapper">
-<cdk-virtual-scroll-viewport itemSize="40" class="viewport">
-  <div *cdkVirtualFor="let item of items; let i = index" class="item">
-    <mat-expansion-panel
-      [expanded]="item.expanded"
-      (opened)="setExpanded(i, true)"
-      (closed)="setExpanded(i, false)">
+  <cdk-virtual-scroll-viewport itemSize="70" class="viewport">
+    <div
+      *cdkVirtualFor="let item of items; let i = index; trackBy: trackByFn; templateCacheSize: 0"
+      class="item">
       
-      <mat-expansion-panel-header>
-        <mat-panel-title>{{ item.title }}</mat-panel-title>
-      </mat-expansion-panel-header>
-      
-      <p>{{ item.content }}</p>
-    </mat-expansion-panel>
-  </div>
-</cdk-virtual-scroll-viewport>
+      <mat-expansion-panel
+        [expanded]="item.expanded"
+        (opened)="setExpanded(i, true)"
+        (closed)="setExpanded(i, false)">
+        
+        <mat-expansion-panel-header>
+          <mat-panel-title>{{ item.title }}</mat-panel-title>
+        </mat-expansion-panel-header>
+        
+        <p>{{ item.content }}</p>
+      </mat-expansion-panel>
+    </div>
+  </cdk-virtual-scroll-viewport>
 </div>
-

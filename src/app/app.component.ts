@@ -23,6 +23,10 @@ export class AppComponent {
     expanded: false // track expansion state per item
   }));
 
+
+  trackByFn(index: number, item: any) {
+  return item.id ?? index; // ensure each item has a stable unique id
+}
   setExpanded(index: number, expanded: boolean) {
     // Collapse all other items if only one should be open
     if (expanded) {
